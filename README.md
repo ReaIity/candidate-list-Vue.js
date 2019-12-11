@@ -1,4 +1,4 @@
-# mamamia
+# Candidates
 
 ## Project setup
 ```
