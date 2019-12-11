@@ -17,6 +17,8 @@
                         <div class="userData cellModal">Occupation: {{currentUser.jobTitle}}</div>
                     </slot>
                 </section>
+
+
                 <footer class="modal-footer">
                     <slot name="footer">
                         <button type="button" class="btn btn-green" @click="$emit('close')" aria-label="Close modal">
