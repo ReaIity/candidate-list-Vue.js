@@ -6,31 +6,31 @@
              class="list">
             <div class="icon cell"
                  :style=" { 'background-image': 'url('+ user.photoUrl +')' } "></div>
-            <div class="name cell">
+            <div class="nameSurnameOccupation cell">
                 {{ user.firstName }}
             </div>
-            <div class="surname cell">
+            <div class="nameSurnameOccupation cell">
                 {{ user.lastName }}
             </div>
-            <div class="occupation cell">
+            <div class="nameSurnameOccupation cell">
                 {{ user.jobTitle }}
             </div>
             <div class="view cell"
                  id="view"
                  @click="clickOnUser(user)"> View Candidate </div>
         </div>
-        <modal v-if="showModal"
+        <modalWindow v-if="showModal"
                @close="closeModal"
                :currentUser="currentUser"/>
     </div>
 </template>
 
 <script>
-  import modal from '@/components/modal'
+  import modalWindow from '@/components/modalWindow'
 
   export default {
     name: 'UserInfo',
-    components: { modal },
+    components: { modalWindow },
     props: {
       users: {
         type: Array,
@@ -45,18 +45,16 @@
     },
     computed: {
       filteredUsers: function () {
-        var sortUsers = this.users.filter( user => !(user.id % 2) && user.id != 0 );
-        return sortUsers;
+        return this.users.filter( user => !(user.id % 2) && user.id != 0 );
       }
     },
     methods: {
-      clickOnUser: function (user) {
+      clickOnUser (user) {
         this.showModal = true;
         this.currentUser = user;
       },
-      closeModal: function () {
-        this.showModal = false;
-        return this.showModal
+      closeModal () {
+        return this.showModal = false;
       }
     }
   }
@@ -89,21 +87,7 @@
         border: 1px solid #4aae9b;
     }
 
-    .name {
-        margin: auto;
-        min-width: 50px;
-        width: max-content;
-        height: 25px;
-    }
-
-    .surname {
-        margin: auto;
-        min-width: 50px;
-        width: max-content;
-        height: 25px;
-    }
-
-    .occupation {
+    .nameSurnameOccupation {
         margin: auto;
         min-width: 50px;
         width: max-content;

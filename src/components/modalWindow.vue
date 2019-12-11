@@ -30,7 +30,7 @@
                 <footer class="modal-footer">
                     <slot name="footer">
                         <button type="button" class="btn btn-green"
-                                @click="$emit('close')"
+                                @click="closeBtnModalWindow"
                                 aria-label="Close modal">
                             Close
                         </button>
@@ -43,13 +43,18 @@
 
 <script>
   export default {
-    name: 'modal',
+    name: 'modalWindow',
     props: {
       currentUser: {
         type: Object,
         required: false,
       }
     },
+    methods : {
+      closeBtnModalWindow () {
+        $emit('close');
+      }
+    }
   }
 </script>
 
