@@ -19,18 +19,18 @@
                  id="view"
                  @click="clickOnUser(user)"> View Candidate </div>
         </div>
-        <modalWindow v-if="showModal"
+        <ModalWindow v-if="showModal"
                @close="closeModal"
                :currentUser="currentUser"/>
     </div>
 </template>
 
 <script>
-import modalWindow from '@/components/modalWindow'
+import ModalWindow from '@/components/ModalWindow'
 
 export default {
 name: 'UserInfo',
-components: { modalWindow },
+components: { ModalWindow },
     props: {
       users: {
         type: Array,
@@ -44,8 +44,8 @@ components: { modalWindow },
       }
     },
     computed: {
-      filteredUsers: function () {
-        return this.users.filter( user => !(user.id % 2) && user.id != 0 );
+      filteredUsers () {
+        return this.users.filter(user => !(user.id % 2));
       }
     },
     methods: {
