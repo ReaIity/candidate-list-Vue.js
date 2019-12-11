@@ -1,10 +1,10 @@
 <template>
     <div id="app">
-        <div class="title">Candidates List</div>
+        <div class="title"> Candidates List </div>
         <div class="columns">
-            <p>Name</p>
-            <p>Surname</p>
-            <p>Occupation</p>
+            <p> Name </p>
+            <p> Surname </p>
+            <p> Occupation </p>
         </div>
         <ul>
             <user-info :users="users"></user-info>
@@ -16,12 +16,10 @@
 
   import axios from 'axios'
   import UserInfo from '@/components/UserInfo'
-  import modal from '@/components/modal'
 
   export default {
     name: 'app',
-    // eslint-disable-next-line vue/no-unused-components
-    components: { UserInfo, modal },
+    components: { UserInfo },
     created () {
       axios.get('https://cors-anywhere.herokuapp.com/https://fakedata.dev/users/v1/get_users', [{ mode: 'no-cors' }])
         .then(responce => {
@@ -36,10 +34,7 @@
       return {
         users: []
       }
-    },
-    mounted () {
-    },
-    methods: {}
+    }
   }
 </script>
 

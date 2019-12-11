@@ -11,17 +11,27 @@
 
                 <section class="modal-body">
                     <slot name="body">
-                        <div class="userData cellModal">Candidate ID: {{currentUser.id}}</div>
-                        <div class="userData cellModal">Name: {{currentUser.firstName}}</div>
-                        <div class="userData cellModal">Surname: {{currentUser.lastName}}</div>
-                        <div class="userData cellModal">Occupation: {{currentUser.jobTitle}}</div>
+                        <div class="userData cellModal">
+                            Candidate ID: {{currentUser.id}}
+                        </div>
+                        <div class="userData cellModal">
+                            Name: {{currentUser.firstName}}
+                        </div>
+                        <div class="userData cellModal">
+                            Surname: {{currentUser.lastName}}
+                        </div>
+                        <div class="userData cellModal">
+                            Occupation: {{currentUser.jobTitle}}
+                        </div>
                     </slot>
                 </section>
 
 
                 <footer class="modal-footer">
                     <slot name="footer">
-                        <button type="button" class="btn btn-green" @click="$emit('close')" aria-label="Close modal">
+                        <button type="button" class="btn btn-green"
+                                @click="$emit('close')"
+                                aria-label="Close modal">
                             Close
                         </button>
                     </slot>
@@ -109,16 +119,6 @@
     .userData {
         width: max-content;
         padding: 5px;
-    }
-
-    .btn-close {
-        border: none;
-        font-size: 20px;
-        padding: 20px;
-        cursor: pointer;
-        font-weight: bold;
-        color: #4aae9b;
-        background: transparent;
     }
 
     .btn {

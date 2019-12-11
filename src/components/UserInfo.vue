@@ -1,13 +1,27 @@
 <template>
     <div>
-        <div id="row" v-for="user in filteredUsers" :user="user" :key="user.id" class="list">
-            <div class="icon cell" :style="{'background-image': 'url('+ user.photoUrl +')'}"></div>
-            <div class="name cell"> {{user.firstName}} </div>
-            <div class="surname cell"> {{user.lastName}} </div>
-            <div class="occupation cell"> {{user.jobTitle}} </div>
-            <div class="view cell" id="view" @click="clickOnUser(user)">View Candidate</div>
+        <div id="row" v-for="user in filteredUsers"
+             :user="user"
+             :key="user.id"
+             class="list">
+            <div class="icon cell"
+                 :style=" { 'background-image': 'url('+ user.photoUrl +')' } "></div>
+            <div class="name cell">
+                {{ user.firstName }}
+            </div>
+            <div class="surname cell">
+                {{ user.lastName }}
+            </div>
+            <div class="occupation cell">
+                {{ user.jobTitle }}
+            </div>
+            <div class="view cell"
+                 id="view"
+                 @click="clickOnUser(user)"> View Candidate </div>
         </div>
-        <modal v-if="showModal" @close="showModal = false" :currentUser="currentUser"/>
+        <modal v-if="showModal"
+               @close="closeModal"
+               :currentUser="currentUser"/>
     </div>
 </template>
 
@@ -20,7 +34,7 @@
     props: {
       users: {
         type: Array,
-        required: true,
+        required: true
       }
     },
     data () {
@@ -29,19 +43,20 @@
         currentUser: {}
       }
     },
-    mounted () {
-
-    },
     computed: {
       filteredUsers: function () {
-        var sortUsers = this.users.filter(user => !(user.id % 2) && user.id != 0)
-        return sortUsers
+        var sortUsers = this.users.filter( user => !(user.id % 2) && user.id != 0 );
+        return sortUsers;
       }
     },
     methods: {
       clickOnUser: function (user) {
-        this.showModal = true
-        this.currentUser = user
+        this.showModal = true;
+        this.currentUser = user;
+      },
+      closeModal: function () {
+        this.showModal = false;
+        return this.showModal
       }
     }
   }
