@@ -43,7 +43,7 @@
 
 <script>
 export default {
-    name: 'ModalWindow',
+name: 'ModalWindow',
     props: {
       currentUser: {
         type: Object,

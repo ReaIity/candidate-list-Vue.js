@@ -54,7 +54,7 @@ components: { ModalWindow },
         this.currentUser = user;
       },
       closeModal () {
-        return this.showModal = false;
+        this.showModal = false;
       }
     }
 }
