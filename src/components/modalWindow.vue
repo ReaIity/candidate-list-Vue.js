@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  export default {
+export default {
     name: 'modalWindow',
     props: {
       currentUser: {
@@ -52,10 +52,10 @@
     },
     methods : {
       closeBtnModalWindow () {
-        $emit('close');
+        this.$emit('close');
       }
     }
-  }
+}
 </script>
 
 <style scoped>

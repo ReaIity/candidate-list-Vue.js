@@ -26,11 +26,11 @@
 </template>
 
 <script>
-  import modalWindow from '@/components/modalWindow'
+import modalWindow from '@/components/modalWindow'
 
-  export default {
-    name: 'UserInfo',
-    components: { modalWindow },
+export default {
+name: 'UserInfo',
+components: { modalWindow },
     props: {
       users: {
         type: Array,
@@ -57,7 +57,7 @@
         return this.showModal = false;
       }
     }
-  }
+}
 </script>
 
 <style scoped>
@@ -102,5 +102,4 @@
         cursor: pointer;
         background: #4aae9b;
     }
-
 </style>

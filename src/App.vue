@@ -14,12 +14,12 @@
 
 <script>
 
-  import axios from 'axios'
-  import UserInfo from '@/components/UserInfo'
+import axios from 'axios'
+import UserInfo from '@/components/UserInfo'
 
-  export default {
-    name: 'app',
-    components: { UserInfo },
+export default {
+name: 'app',
+components: { UserInfo },
     created () {
       axios.get('https://cors-anywhere.herokuapp.com/https://fakedata.dev/users/v1/get_users', [{ mode: 'no-cors' }])
         .then(responce => {
@@ -35,7 +35,7 @@
         users: []
       }
     }
-  }
+}
 </script>
 
 <style>
