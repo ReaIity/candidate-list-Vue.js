@@ -23,10 +23,10 @@ components: { UserInfo },
     created () {
       axios.get('https://cors-anywhere.herokuapp.com/https://fakedata.dev/users/v1/get_users', [{ mode: 'no-cors' }])
         .then(responce => {
-          this.users = responce.data
+          this.users = responce.data;
         })
         .catch(e => {
-          this.errors.push(e)
+          this.errors.push(e);
         })
     },
     computed: {},
