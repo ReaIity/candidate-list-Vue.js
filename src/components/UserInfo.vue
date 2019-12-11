@@ -33,15 +33,8 @@
         },
         computed: {
             filteredUsers: function() {
-            var newUsers = this.users;
-            var sortUsers = [];
-            let i = 0;
-            for(; i < newUsers.length; i++) {
-                if(parseInt(newUsers[i].id) % 2 == 0 && parseInt(newUsers[i].id) > 0) {
-                    sortUsers.push(newUsers[i])
-                }
-            }
-                return sortUsers;
+            var sortUsers = this.users.filter(user => !(user.id%2) && user.id != 0);
+            return sortUsers;
             }
         },
         methods: {
