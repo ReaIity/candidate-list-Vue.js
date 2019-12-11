@@ -1,10 +1,11 @@
 <template>
     <transition name="modal-fade">
         <div class="modal-backdrop" role="dialog">
-            <div class="modal" ref="modal" >
-                <header class="modal-header" >
+            <div class="modal" ref="modal">
+                <header class="modal-header">
                     <slot name="header">
-                        <div  class="iconModal cellModal" :style="{'background-image': 'url('+ currentUser.photoUrl +')'}"></div>
+                        <div class="iconModal cellModal"
+                             :style="{'background-image': 'url('+ currentUser.photoUrl +')'}"></div>
                     </slot>
                 </header>
 
@@ -29,15 +30,15 @@
 </template>
 
 <script>
-    export default {
-        name: "modal",
-        props: {
-            currentUser : {
-                type: Object,
-                required: false,
-            }
-        },
-    }
+  export default {
+    name: 'modal',
+    props: {
+      currentUser: {
+        type: Object,
+        required: false,
+      }
+    },
+  }
 </script>
 
 <style scoped>
@@ -47,6 +48,7 @@
         font-size: 14px;
         cursor: pointer;
     }
+
     .modal-backdrop {
         position: fixed;
         top: 0;
@@ -88,21 +90,25 @@
         position: relative;
         padding: 20px 10px;
     }
+
     .iconModal {
         width: 100px;
         height: 100px;
         border-radius: 50px;
         border: 1px solid #4aae9b;
     }
+
     .cellModal {
         justify-self: center;
 
         align-self: center;
     }
+
     .userData {
         width: max-content;
         padding: 5px;
     }
+
     .btn-close {
         border: none;
         font-size: 20px;
