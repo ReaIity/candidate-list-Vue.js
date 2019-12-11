@@ -7,7 +7,7 @@
             <p> Occupation </p>
         </div>
         <ul>
-            <user-info :users="users"></user-info>
+            <UserInfo :users="users"></UserInfo>
         </ul>
     </div>
 </template>
